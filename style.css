@@ -1022,21 +1022,25 @@ p {
     animation: twinkle 2s infinite
 }
 
+.laptop,
 .laptop-screen {
+    width: min(560px, 100%);
+    margin: auto;
     padding: 13px;
     background: #17131e;
     border: 5px solid #17131e;
-    border-radius: 22px 22px 8px 8px
+    border-radius: 22px 22px 8px 8px;
 }
 
 .movie-screen {
+    width: 100%;
     height: 280px;
     max-width: 680px;
     border-radius: 12px;
     background: radial-gradient(circle at 50% 40%, #ffb8c9 0 8%, transparent 9%), linear-gradient(135deg, #635a88, #2d273c);
     display: grid;
     place-items: center;
-    position: relative
+    position: relative;
 }
 
 .movie-screen span {
@@ -1085,17 +1089,18 @@ p {
 @media (max-width: 900px) {
     .movie-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+        align-items: center;
+        justify-items: center;
     }
     .movie-screen {
-        height: 260px;
+        height: 220px;
+        width: min(100%, 420px);
     }
     .movie-screen .play-button {
         width: 56px;
         height: 56px;
         font-size: 1.4rem;
-    }
-    .movie-grid {
-        align-items: center;
     }
 }
 
@@ -1276,7 +1281,9 @@ p {
 
 .ending {
     background: linear-gradient(#fff9ef, #dff5ff);
-    text-align: center
+    text-align: center;
+    overflow: visible;
+    padding-bottom: 80px;
 }
 
 .ending h2 {
@@ -1324,7 +1331,17 @@ p {
 .secret {
     background: #ff9bb6;
     color: #fff;
-    margin-top: 15px
+    margin-top: 20px;
+    position: relative;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border: 3px solid #514458;
+    border-radius: 99px;
+    box-shadow: 6px 6px #514458;
+    cursor: pointer;
 }
 
 .secret-message {
@@ -1451,33 +1468,95 @@ p {
     }
 
     .joke-cloud {
-        height: 470px
+        height: auto;
+        padding: 20px 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
     }
 
-    .joke-cloud span:nth-child(1) {
-        left: 2%;
-        top: 5%
+    .joke-cloud span {
+        position: relative;
+        width: clamp(260px, 95%, 320px);
+        max-width: 100%;
+        margin: 0;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        animation: none;
+        padding: 14px 20px;
+        font-size: 1.8rem;
+        box-sizing: border-box;
     }
 
-    .joke-cloud span:nth-child(2) {
-        right: 2%;
-        top: 28%
-    }
-
-    .joke-cloud span:nth-child(3) {
-        left: 5%;
-        bottom: 25%
-    }
-
-    .joke-cloud span:nth-child(4) {
-        right: 3%;
-        bottom: 4%
-    }
-
+    .joke-cloud span:nth-child(1),
+    .joke-cloud span:nth-child(2),
+    .joke-cloud span:nth-child(3),
+    .joke-cloud span:nth-child(4),
     .joke-cloud span:nth-child(5) {
-        left: 45%;
-        top: 18%;
-        transform: translateX(-50%) rotate(2deg);
+        background: #fff;
+        transform: none;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+    }
+
+    .paper {
+        padding: 45px 28px
+    }
+
+    .letter-text {
+        font-size: 1.4rem
+    }
+
+    .movie-screen {
+        height: 200px;
+        width: min(100%, 340px);
+    }
+
+    .movie-screen .play-button {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+
+    .joke-cloud {
+        height: auto;
+        padding: 20px 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .joke-cloud span {
+        position: relative;
+        width: clamp(260px, 95%, 320px);
+        max-width: 100%;
+        margin: 0;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        animation: none;
+        padding: 14px 20px;
+        font-size: 1.8rem;
+        box-sizing: border-box;
+    }
+
+    .joke-cloud span:nth-child(1),
+    .joke-cloud span:nth-child(2),
+    .joke-cloud span:nth-child(3),
+    .joke-cloud span:nth-child(4),
+    .joke-cloud span:nth-child(5) {
+        background: #fff;
     }
 
     .paper {
